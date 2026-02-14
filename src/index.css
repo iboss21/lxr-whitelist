@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-wolves-darker text-gray-100 font-georgian;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #8b4513 #1a1a1a;
+  }
+  
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #8b4513;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .western-title {
+    @apply font-western text-wolves-gold tracking-wider;
+  }
+  
+  .wolf-gradient {
+    background: linear-gradient(135deg, #8b4513 0%, #d4af37 100%);
+  }
+  
+  .card-wolves {
+    @apply bg-wolves-gray border border-wolves-border rounded-lg p-6 shadow-xl;
+  }
+  
+  .btn-wolves {
+    @apply px-6 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply bg-wolves-accent hover:bg-opacity-80 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-wolves-gray border border-wolves-border hover:border-wolves-accent text-gray-300;
+  }
+  
+  .btn-success {
+    @apply bg-wolves-green hover:bg-opacity-80 text-white;
+  }
+  
+  .btn-danger {
+    @apply bg-wolves-red hover:bg-opacity-80 text-white;
+  }
+  
+  .input-wolves {
+    @apply bg-wolves-dark border border-wolves-border rounded-lg px-4 py-3 text-gray-100 focus:border-wolves-accent focus:outline-none focus:ring-2 focus:ring-wolves-accent focus:ring-opacity-50 transition-all;
+  }
+  
+  .textarea-wolves {
+    @apply input-wolves resize-none;
+  }
+  
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+  
+  .badge-accepted {
+    @apply bg-wolves-green text-white;
+  }
+  
+  .badge-rejected {
+    @apply bg-wolves-red text-white;
+  }
+  
+  .badge-pending {
+    @apply bg-yellow-600 text-white;
+  }
+  
+  .score-bar {
+    @apply h-2 rounded-full transition-all duration-500;
+  }
+}
