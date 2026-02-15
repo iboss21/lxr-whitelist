@@ -20,6 +20,16 @@
 
 The **LXR Whitelist Evaluator** is a production-grade React application that automatically evaluates RedM roleplay server whitelist applications using AI-powered analysis. Built specifically for **The Land of Wolves** Georgian RP server, it provides instant, detailed feedback on character applications.
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="public/screenshots/screenshot1.png" alt="LXR Whitelist Evaluator - Main Interface" width="800">
+  <p><em>Main application interface</em></p>
+  
+  <img src="public/screenshots/screenshot2.png" alt="LXR Whitelist Evaluator - Evaluation Results" width="800">
+  <p><em>Evaluation results view</em></p>
+</div>
+
 ### ✨ Key Features
 
 - ⚡ **Real-time Evaluation** - Instant AI-powered whitelist assessment
