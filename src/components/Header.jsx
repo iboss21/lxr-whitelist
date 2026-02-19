@@ -15,48 +15,63 @@
 
 export default function Header() {
   return (
-    <header className="relative bg-wolves-dark/90 backdrop-blur-xl border-b border-wolves-accent/50 shadow-2xl">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-wolves-accent/5 via-transparent to-wolves-gold/5 pointer-events-none" />
-      
-      <div className="container mx-auto px-4 py-4 relative z-10">
-        <div className="flex items-center justify-between flex-wrap gap-4">
-          <div className="flex items-center space-x-4">
-            <div className="text-5xl animate-pulse-3s">🐺</div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-wolves-darker/80 backdrop-blur-2xl border-b border-wolves-gold/10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <div className="text-4xl">🐺</div>
             <div>
-              <h1 className="western-title text-2xl md:text-3xl bg-gradient-to-r from-wolves-gold via-yellow-400 to-wolves-gold bg-clip-text text-transparent">
-                Whitelist Evaluator
+              <h1 className="text-xl font-bold bg-gradient-to-r from-wolves-gold via-yellow-400 to-wolves-gold bg-clip-text text-transparent">
+                LXR Whitelist
               </h1>
-              <p className="text-gray-400 text-xs mt-1">
-                The Land of Wolves | მგლების მიწა
+              <p className="text-xs text-gray-500">
+                wolves.land
               </p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-2 md:space-x-4">
+          {/* Navigation Links - Desktop */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <a 
+              href="#features" 
+              className="text-gray-300 hover:text-wolves-gold transition-colors text-sm font-medium"
+            >
+              Features
+            </a>
+            <a 
+              href="#how-it-works" 
+              className="text-gray-300 hover:text-wolves-gold transition-colors text-sm font-medium"
+            >
+              How It Works
+            </a>
             <a 
               href="https://www.wolves.land" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg bg-wolves-gray/50 hover:bg-wolves-gray border border-wolves-border hover:border-wolves-gold text-wolves-gold hover:text-yellow-400 transition-all text-xs md:text-sm font-medium"
+              className="text-gray-300 hover:text-wolves-gold transition-colors text-sm font-medium"
             >
-              🌐 wolves.land
+              wolves.land
             </a>
+          </nav>
+          
+          {/* CTA Buttons */}
+          <div className="flex items-center space-x-4">
             <a 
               href="https://discord.gg/CrKcWdfd3A" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg bg-wolves-gray/50 hover:bg-wolves-gray border border-wolves-border hover:border-wolves-gold text-wolves-gold hover:text-yellow-400 transition-all text-xs md:text-sm font-medium"
+              className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-transparent border border-wolves-gold/30 hover:border-wolves-gold text-wolves-gold transition-all text-sm font-medium"
             >
-              💬 Discord
+              Discord
             </a>
             <a 
               href="https://github.com/iboss21/lxr-whitelist" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-3 py-2 rounded-lg bg-wolves-gray/50 hover:bg-wolves-gray border border-wolves-border hover:border-wolves-gold text-wolves-gold hover:text-yellow-400 transition-all text-xs md:text-sm font-medium hidden md:flex"
+              className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg bg-wolves-gold hover:bg-wolves-gold-light text-wolves-darker transition-all text-sm font-bold"
             >
-              📦 GitHub
+              GitHub
             </a>
           </div>
         </div>
