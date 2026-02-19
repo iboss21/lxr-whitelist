@@ -13,8 +13,6 @@
     © 2026 iBoss21 / The Lux Empire | wolves.land | All Rights Reserved
 */
 
-"use client";
-
 import { memo, useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { animate } from "motion/react";
