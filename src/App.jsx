@@ -21,6 +21,9 @@ import ResultsDisplay from './components/ResultsDisplay';
 import Footer from './components/Footer';
 import { evaluateWhitelist } from './utils/evaluator';
 import { GlowingEffect } from './components/ui/glowing-effect';
+import { AnimatedGradient } from './components/ui/animated-gradient';
+import { FloatingElements } from './components/ui/floating-elements';
+import { ScrollReveal } from './components/ui/scroll-reveal';
 
 function App() {
   const [evaluation, setEvaluation] = useState(null);
@@ -50,12 +53,14 @@ function App() {
       {/* Animated background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-wolves-darker via-wolves-dark to-wolves-gray -z-10" />
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-wolves-accent/10 via-transparent to-transparent -z-10 animate-pulse-slow" />
+      <AnimatedGradient className="-z-10" />
       
       <Header />
       
       {/* Hero Section - Apple Style */}
       <section className="relative min-h-screen flex items-center justify-center px-4 py-32">
-        <div className="container mx-auto max-w-7xl text-center">
+        <FloatingElements />
+        <div className="container mx-auto max-w-7xl text-center relative z-10">
           {/* Main Hero Content */}
           <div className="mb-16 space-y-8">
             <div className="relative inline-block">
@@ -128,16 +133,18 @@ function App() {
       </section>
       
       {/* Features Section - Nike Style Bold */}
-      <section className="relative py-32 px-4 bg-gradient-to-b from-transparent to-wolves-darker/50">
+      <section id="features" className="relative py-32 px-4 bg-gradient-to-b from-transparent to-wolves-darker/50">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Powered by <span className="text-wolves-gold">AI Excellence</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Three powerful features that revolutionize whitelist evaluation
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Powered by <span className="text-wolves-gold">AI Excellence</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Three powerful features that revolutionize whitelist evaluation
+              </p>
+            </div>
+          </ScrollReveal>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -160,37 +167,41 @@ function App() {
                 highlight: 'Fast' 
               }
             ].map((feature, i) => (
-              <div key={i} className="relative group">
-                <GlowingEffect
-                  spread={50}
-                  glow={true}
-                  disabled={false}
-                  proximity={100}
-                  borderWidth={2}
-                />
-                <div className="card-wolves backdrop-blur-xl bg-wolves-gray/80 hover:bg-wolves-gray/95 transition-all duration-500 h-full p-10 transform group-hover:scale-105">
-                  <div className="text-7xl mb-6">{feature.icon}</div>
-                  <div className="text-sm text-wolves-gold uppercase tracking-wider font-bold mb-3">{feature.highlight}</div>
-                  <h3 className="text-3xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 text-lg leading-relaxed">{feature.desc}</p>
+              <ScrollReveal key={i} delay={i * 200}>
+                <div className="relative group">
+                  <GlowingEffect
+                    spread={50}
+                    glow={true}
+                    disabled={false}
+                    proximity={100}
+                    borderWidth={2}
+                  />
+                  <div className="card-wolves backdrop-blur-xl bg-wolves-gray/80 hover:bg-wolves-gray/95 transition-all duration-500 h-full p-10 transform group-hover:scale-105">
+                    <div className="text-7xl mb-6">{feature.icon}</div>
+                    <div className="text-sm text-wolves-gold uppercase tracking-wider font-bold mb-3">{feature.highlight}</div>
+                    <h3 className="text-3xl font-bold text-white mb-4">{feature.title}</h3>
+                    <p className="text-gray-400 text-lg leading-relaxed">{feature.desc}</p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
       
       {/* How It Works Section */}
-      <section className="relative py-32 px-4">
+      <section id="how-it-works" className="relative py-32 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Simple. <span className="text-wolves-gold">Powerful. </span>Fast.
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Three steps to evaluate your whitelist application
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Simple. <span className="text-wolves-gold">Powerful. </span>Fast.
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Three steps to evaluate your whitelist application
+              </p>
+            </div>
+          </ScrollReveal>
           
           <div className="space-y-16">
             {[
@@ -210,20 +221,22 @@ function App() {
                 desc: 'Receive instant detailed results with scores, recommendations, and improvement suggestions.' 
               }
             ].map((step, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center gap-8">
-                <div className="relative">
-                  <div className="text-8xl font-bold text-wolves-gold/20">{step.number}</div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-wolves-gold/10 border-2 border-wolves-gold flex items-center justify-center">
-                      <span className="text-3xl font-bold text-wolves-gold">{i + 1}</span>
+              <ScrollReveal key={i} delay={i * 150}>
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="relative">
+                    <div className="text-8xl font-bold text-wolves-gold/20">{step.number}</div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-wolves-gold/10 border-2 border-wolves-gold flex items-center justify-center">
+                        <span className="text-3xl font-bold text-wolves-gold">{i + 1}</span>
+                      </div>
                     </div>
                   </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <h3 className="text-3xl font-bold text-white mb-3">{step.title}</h3>
+                    <p className="text-xl text-gray-400 leading-relaxed">{step.desc}</p>
+                  </div>
                 </div>
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-3xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-xl text-gray-400 leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
