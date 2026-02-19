@@ -22,7 +22,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 relative z-10">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="flex items-center space-x-4">
-            <div className="text-5xl animate-pulse" style={{ animationDuration: '3s' }}>🐺</div>
+            <div className="text-5xl animate-pulse-3s">🐺</div>
             <div>
               <h1 className="western-title text-2xl md:text-3xl bg-gradient-to-r from-wolves-gold via-yellow-400 to-wolves-gold bg-clip-text text-transparent">
                 Whitelist Evaluator

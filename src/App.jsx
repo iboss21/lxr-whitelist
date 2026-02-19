@@ -49,7 +49,7 @@ function App() {
     <div className="min-h-screen flex flex-col relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="fixed inset-0 bg-gradient-to-br from-wolves-darker via-wolves-dark to-wolves-gray -z-10" />
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-wolves-accent/10 via-transparent to-transparent -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-wolves-accent/10 via-transparent to-transparent -z-10 animate-pulse-slow" />
       
       <Header />
       
