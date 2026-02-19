@@ -24,6 +24,10 @@
     background-color: #8b4513;
     border-radius: 4px;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
@@ -36,7 +40,15 @@
   }
   
   .card-wolves {
-    @apply bg-wolves-gray border border-wolves-border rounded-lg p-6 shadow-xl;
+    @apply bg-wolves-gray/90 backdrop-blur-md border border-wolves-border rounded-xl p-6 shadow-2xl;
+    box-shadow: 0 20px 60px -12px rgba(139, 69, 19, 0.25),
+                0 0 20px -5px rgba(212, 175, 55, 0.1);
+  }
+  
+  .card-wolves:hover {
+    @apply border-wolves-gold/30;
+    box-shadow: 0 25px 80px -15px rgba(139, 69, 19, 0.35),
+                0 0 30px -5px rgba(212, 175, 55, 0.2);
   }
   
   .btn-wolves {
@@ -44,23 +56,28 @@
   }
   
   .btn-primary {
-    @apply bg-wolves-accent hover:bg-opacity-80 text-white;
+    @apply bg-wolves-accent hover:bg-opacity-80 text-white shadow-lg;
+    box-shadow: 0 4px 14px 0 rgba(139, 69, 19, 0.4);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.6);
   }
   
   .btn-secondary {
-    @apply bg-wolves-gray border border-wolves-border hover:border-wolves-accent text-gray-300;
+    @apply bg-wolves-gray/50 backdrop-blur-sm border border-wolves-border hover:border-wolves-accent text-gray-300 hover:bg-wolves-gray;
   }
   
   .btn-success {
-    @apply bg-wolves-green hover:bg-opacity-80 text-white;
+    @apply bg-wolves-green hover:bg-opacity-80 text-white shadow-lg;
   }
   
   .btn-danger {
-    @apply bg-wolves-red hover:bg-opacity-80 text-white;
+    @apply bg-wolves-red hover:bg-opacity-80 text-white shadow-lg;
   }
   
   .input-wolves {
-    @apply bg-wolves-dark border border-wolves-border rounded-lg px-4 py-3 text-gray-100 focus:border-wolves-accent focus:outline-none focus:ring-2 focus:ring-wolves-accent focus:ring-opacity-50 transition-all;
+    @apply bg-wolves-dark/80 backdrop-blur-sm border border-wolves-border rounded-lg px-4 py-3 text-gray-100 focus:border-wolves-accent focus:outline-none focus:ring-2 focus:ring-wolves-accent/50 transition-all;
   }
   
   .textarea-wolves {
@@ -72,18 +89,23 @@
   }
   
   .badge-accepted {
-    @apply bg-wolves-green text-white;
+    @apply bg-wolves-green text-white shadow-lg;
   }
   
   .badge-rejected {
-    @apply bg-wolves-red text-white;
+    @apply bg-wolves-red text-white shadow-lg;
   }
   
   .badge-pending {
-    @apply bg-yellow-600 text-white;
+    @apply bg-yellow-600 text-white shadow-lg;
   }
   
   .score-bar {
     @apply h-2 rounded-full transition-all duration-500;
+  }
+  
+  .glassmorphism {
+    @apply backdrop-blur-xl bg-wolves-glass border border-wolves-glass-border;
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.2);
   }
 }
